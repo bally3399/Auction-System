@@ -19,6 +19,11 @@ class Item(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    ITEM_STATUS = [
+        ('S', 'SOLD'),
+        ('NS', 'NOT_SOLD'),
+    ]
+    item_status = models.IntegerField(max_length=2, choices=ITEM_STATUS, default='NS')
 
     def __str__(self):
         return self.name
