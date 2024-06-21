@@ -26,16 +26,6 @@ class User(models.Model):
     is_logged_in = models.BooleanField(default=False)
 
 
-# class Seller(models.Model):
-#     id = models.AutoField(primary_key=True)
-#     first_name = models.CharField(max_length=180, blank=False, null=False)
-#     last_name = models.CharField(max_length=180, blank=False, null=False)
-#     email = models.EmailField(max_length=255, unique=True, blank=False, null=False)
-#     username = models.CharField(max_length=30, unique=True, null=False, blank=False)
-#     password = models.CharField(max_length=15, null=False, blank=False)
-#     is_logged_in = models.BooleanField(default=False)
-# last_seen_date = models.DateField(default=datetime.date.today)
-
 class Item(models.Model):
     item_id = models.AutoField(primary_key=True)
     item_name = models.CharField(max_length=180, blank=False, null=False)
@@ -68,7 +58,4 @@ class Bid(models.Model):
     end_date = models.DateField(auto_now_add=True)
     bidder_name = models.CharField(max_length=180, blank=False, null=False)
 
-# class Bid(models.Model):
-#     id = models.AutoField(primary_key=True)
-#     bidder = models.ForeignKey(Bidder)
-#     item = models.ForeignKey(Item)
+
