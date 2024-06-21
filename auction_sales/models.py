@@ -39,7 +39,7 @@ class Item(models.Model):
     ]
     item_amount = models.DecimalField(max_digits=10, decimal_places=2)
     item_category = models.CharField(max_length=4, choices=ITEM_CATEGORY, default='A', null=False, blank=False)
-    item_status = models.IntegerField(max_length=2, choices=ITEM_STATUS, default='UP', null=False, blank=False)
+    item_status = models.CharField(max_length=2, choices=ITEM_STATUS, default='UP', null=False, blank=False)
 
 
 class Admin(models.Model):
